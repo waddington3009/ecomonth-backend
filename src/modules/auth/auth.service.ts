@@ -13,7 +13,7 @@ import type { RegisterInput, LoginInput, UpdateProfileInput, ChangePasswordInput
 // Gera tokens JWT
 function generateAccessToken(userId: number, email: string): string {
   return jwt.sign({ userId, email }, env.JWT_SECRET, {
-    expiresIn: env.JWT_EXPIRES_IN,
+    expiresIn: env.JWT_EXPIRES_IN as any,
   });
 }
 
